@@ -13,10 +13,11 @@ function Table(props)  {
             <th scope="col">City</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
+            <th scope="col">Gender</th>
           </tr>
         </thead>
         <tbody>
-          {props.arrEmpl.length>0 ? props.arrEmpl.map(employee => {
+          {props.arrEmpl.length > 0 ? props.arrEmpl.map(employee => {
             return (
 
               <tr>
@@ -25,9 +26,10 @@ function Table(props)  {
               <td>{employee.location.city}</td>
               <td>{employee.email}</td>
               <td>{employee.phone}</td>
+              <td>{employee.gender}</td>
             </tr>
             )
-          })  : 
+          })  :
           <tr> 
           <th scope="row">3</th>
             <td>Larry</td>
