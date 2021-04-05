@@ -5,7 +5,7 @@ import React from "react";
 function Table(props) {
   return (
     <>
-      <table className="table">
+      <table className="table mt-3">
         <thead className="thead-dark">
           <tr>
             <th scope="col">Image</th>

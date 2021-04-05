@@ -41,7 +41,7 @@ class Employee extends Component {
   };
   //handle toggle change
 
-  handleToggleChange = (event) => {
+  handleToggleChange = () => {
       const sortedEmpl = this.state.arrEmpl.sort((a, b) => {
              return a.name.first.localeCompare(b.name.first) 
       })
@@ -54,7 +54,8 @@ class Employee extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="text-center">Employee Management</h1>
+        <h1 className="text-center">Employee Directory</h1>
+        <hr></hr>
         <Search
           search={this.state.search}
           handleInputChange={this.handleInputChange}
