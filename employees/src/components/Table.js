@@ -1,49 +1,57 @@
 import React from "react";
 // props={
-//arrEmpl
+//currentEmployees
 // }
-function Table(props)  {
-
-    return (
-        <table class="table">
-        <thead class="thead-dark">
+function Table(props) {
+  return (
+    <>
+      <table className="table">
+        <thead className="thead-dark">
           <tr>
             <th scope="col">Image</th>
-            <th scope="col">Name</th>
+            <th
+              onClick={props.toggleChange}
+              className="dropdown-toggle"
+              role="button"
+              data-toggle="dropdown"
+              scope="col"
+            >
+              Name
+            </th>
             <th scope="col">City</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
-            <th scope="col">Gender</th>
           </tr>
         </thead>
         <tbody>
-          {props.arrEmpl.length > 0 ? props.arrEmpl.map(employee => {
-            return (
-
-              <tr>
-              <th scope="row"><img src={employee.picture.thumbnail} alt="headshot"/></th>
-              <td>{employee.name.first} {employee.name.last}</td>
-              <td>{employee.location.city}</td>
-              <td>{employee.email}</td>
-              <td>{employee.phone}</td>
-              <td>{employee.gender}</td>
+          {props.currentEmployees.length > 0 ? (
+            props.currentEmployees.map((employee) => {
+              return (
+                <tr>
+                  <th scope="row">
+                    <img src={employee.picture.thumbnail} alt="headshot" />
+                  </th>
+                  <td>
+                    {employee.name.first} {employee.name.last}
+                  </td>
+                  <td>{employee.location.city}</td>
+                  <td>{employee.email}</td>
+                  <td>{employee.phone}</td>
+                </tr>
+              );
+            })
+          ) : (
+            <tr>
+              <th scope="row"></th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
-            )
-          })  :
-          <tr> 
-          <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            <td>@twitter</td>
-          </tr> }
-         
-        
-        
+          )}
         </tbody>
       </table>
-    );
-   
+    </>
+  );
 }
-
 export default Table;
