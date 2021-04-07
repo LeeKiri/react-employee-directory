@@ -1,7 +1,5 @@
 import React from "react";
-// props={
-//currentEmployees
-// }
+
 function Table(props) {
   return (
     <>
